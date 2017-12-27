@@ -1,0 +1,104 @@
+body{
+    background-color: #f0f0f0;
+    padding: 0;
+}
+
+body,
+html{
+    height: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+form,
+header,
+main,
+article,
+section,
+footer,
+div,
+ul,
+li,
+input,
+textarea,
+button,
+select,
+label,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a,
+span,
+input,
+.btn,
+div,
+textarea,
+select,
+button{
+    outline: none;
+}
+
+.btn::-moz-focus-inner {
+  border: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #0092e5;
+}
+
+ul{
+    list-style-type: none;
+}
+
+*::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.15);
+}
+
+scrollbar {
+/*  clear useragent default style*/
+   -moz-appearance: none !important;
+}
+/* buttons at two ends */
+scrollbarbutton {
+   -moz-appearance: none !important;
+}
+/* the sliding part*/
+thumb{
+   -moz-appearance: none !important;
+}
+scrollcorner {
+   -moz-appearance: none !important;
+   resize:both;
+}
+/* vertical or horizontal */
+scrollbar[orient="vertical"] {
+    color:silver;
+}
+
+
+
+#non_free_num_ui .skype_c2c_logo_img{
+    display: none !important;
+}
+
+.inactive{
+    display: none !important;
+}
