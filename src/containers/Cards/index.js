@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from '../../components/Header';
 import RightPaneContainer from '../../components/RightPaneContainer';
 import Card from '../../components/Card';
+import CardControls from '../../components/CardControls';
 
 const cardData = [
     {
@@ -30,8 +31,9 @@ export default () => {
     return (
         <div className="pane">
             <div className="pane pane-main">
-                <Header title="Cards"/>
-        
+                <Header title="Cards">
+                    <CardControls />
+                </Header>
                 <div className="pane pane-body">
                     <div className="pane pane-cards ui-sortable">
                     {

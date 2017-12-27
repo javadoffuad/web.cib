@@ -5,5 +5,6 @@ export default (props) => {
                 <div className="pane header-title">
                     <h2>{props.title}</h2>
                 </div>
+                {props.children}
             </div>
 }
