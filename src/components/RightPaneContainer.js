@@ -4,7 +4,7 @@ import Header from './Header';
 
 export default (props) => {
     return(
-        <div className="pane pane-right">
+        <div id="latest-operations" className="pane pane-right">
             <Header title={props.title}/>
 
             <div className="pane pane-body">

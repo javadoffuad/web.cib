@@ -1,10 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import RightPaneContainer from '../../components/RightPaneContainer';
 import Card from '../../components/Card';
 import CardControls from '../../components/CardControls';
+import LatestOperationItem from '../../components/LatestOperationItem';
 
 const cardData = [
     {
@@ -35,7 +35,7 @@ export default () => {
                     <CardControls />
                 </Header>
                 <div className="pane pane-body">
-                    <div className="pane pane-cards ui-sortable">
+                    <div id="cards" className="pane pane-cards ui-sortable">
                     {
                         cardData.map((card, index) =>
                             <Card key={index} {...card}/>
@@ -52,7 +52,7 @@ export default () => {
                 </div>
                 <div id="latest-operation-container" className="pane pane-item-container">
                     <div className="list list-right">
-                        items
+                        <LatestOperationItem />
                     </div>
                 </div>
             </RightPaneContainer>
