@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Header from '../commons/Header';
+import Header from 'commons/Header';
 import Profile from './Profile';
 import ChangeAccessCode from './ChangeAccessCode';
 import Language from './Language';
-import RightPaneContainer from '../commons/RightPaneContainer';
+import RightPaneContainer from 'commons/RightPaneContainer';
 import RightPane from './RightPane';
 
 export default () => {

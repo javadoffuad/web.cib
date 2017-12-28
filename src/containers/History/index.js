@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Header from '../../components/Header';
-import RightPaneContainer from '../../components/RightPaneContainer';
-import RightFixedPane from '../../components/RightFixedPane';
-import SearchPane from '../../components/SearchPane';
+import Header from 'components/Header';
+import RightPaneContainer from 'components/RightPaneContainer';
+import RightFixedPane from 'components/RightFixedPane';
+import SearchPane from 'components/SearchPane';
 
 export default () => {
     return (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import LeftNavigation from '../../components/LeftNavigation';
-import Main from '../../components/Main';
+import LeftNavigation from 'components/LeftNavigation';
+import Main from 'components/Main';
 
 //import './App.css';
 
