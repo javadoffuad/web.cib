@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Header from 'components/Header';
 import RightPaneContainer from 'components/RightPaneContainer';
-import Card from 'components/Card';
+import Card from 'components/CardTest';
 import CardControls from 'components/CardControls';
 import LatestOperationItem from 'components/LatestOperationItem';
 
@@ -25,7 +25,7 @@ export default class Cards extends Component {
                         </CardControls>
                     </Header>
                     <div className="pane pane-body">
-                        <div id="cards" className="pane pane-cards ui-sortable">
+                        <div id="cards" className="pane pane-cards all-cards">
                         {
                             cardData.map((card, index) =>
                                 <Card key={index} {...card}/>

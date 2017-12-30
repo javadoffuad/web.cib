@@ -1,0 +1,262 @@
+#cards.all-cards{
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.all-cards .card-wrap{
+    width: 50%;
+	padding: 14px 14px 0;
+	display: inline-flex;
+}
+
+.all-cards .card-wrap:nth-child(odd){
+    padding-right: 7px;
+}
+
+.all-cards .card-wrap:nth-child(even){
+    padding-left: 7px;
+}
+
+.card{
+	background-color: #fedd2c;
+	padding: 18px 15px;
+    position: relative;
+	margin: 0;
+	display: flex;
+	width: 100%;
+
+	justify-content: space-between;
+
+	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .75), 0px 1px 1px 0px rgba(0,0,0,0.15);
+	-moz-box-shadow:  inset 0px 1px 2px 0px rgba(255,255,255, .75), 0px 1px 1px 0px rgba(0,0,0,0.15);
+	box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .75), 0px 1px 1px 0px rgba(0,0,0,0.15);
+}
+
+.all-cards .card .name{
+	font-size: 15px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.all-cards .card{
+	height: 136px;
+    padding: 20px;
+    margin: 0 !important;
+}
+
+.all-cards .card .footer{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.all-cards .card .pan span{
+	font-size: 25px;
+}
+
+.all-cards .card .number{
+	margin-left: 7px;
+}
+
+.all-cards .card,
+.all-cards .card.is-active:before{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.card.is-active:before{
+	position:absolute;
+	content:"";
+	left:0;
+	right:0;
+	top:0;
+	bottom: 0;
+	border: 4px solid #de0519;
+}
+
+.card .header{
+	height: 26px;
+	position: relative;
+}
+
+.card .logo{
+	display: inline-block;
+	float: right;
+	width: 43px;
+	height: 26px;
+	background: url(../images/cib_icons.svg) no-repeat 0 0;
+	background-size: 178px;
+}
+
+.card.ms .logo{
+	background-position: 0 0;
+}
+
+.card.ms-white .logo{
+	background-position: -90px -41px;
+}
+
+.card.vs .logo,
+.card.vs-white .logo{
+	width: 45px;
+}
+
+.card.vs .logo{
+	background-position: -42px -19px;
+}
+
+.card.vs-white .logo{
+	background-position:  -134px -62px;
+}
+
+/* for removing img*/
+.card .pan{
+	display: flex;
+	align-items: center;
+}
+
+.card .pan,
+.card .header img{
+	float: right;
+}
+
+.card .pan span,
+.card .name{
+	color: #444;
+}
+
+.card .name{
+	font-size: 14px;
+	margin-right: 43px;
+	line-height: 26px;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.card .pan span{
+	font-size: 24px;
+}
+
+.card .pan .dot{
+	float: left;
+	width: 7px;
+	height: 7px;
+	display: inline-block;
+	background-color: #444;
+	position: relative;
+	margin-right: 4px;
+
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.card .number{
+	margin-left: 5px;
+}
+
+.card.vtb .pan span,
+.card.azerturk .pan span,
+.card.pasha .pan span,
+.card.bankofbaku .pan span,
+.card.xalq .pan span,
+.card.ibar .pan span,
+.card.express .pan span,
+.card.asb .pan span,
+.card.kapital .pan span,
+.card.unibank .pan span,
+.card.demir .pan span,
+.card.access .pan span,
+.card.vtb .name,
+.card.bankofbaku .name,
+.card.azerturk .name,
+.card.pasha .name,
+.card.xalq .name,
+.card.ibar .name,
+.card.express .name,
+.card.asb .name,
+.card.kapital .name,
+.card.unibank .name,
+.card.demir .name,
+.card.access .name{
+	color: #fff;
+}
+
+.card.vtb .dot,
+.card.azerturk .dot,
+.card.pasha .dot,
+.card.bankofbaku .dot,
+.card.xalq .dot,
+.card.ibar .dot,
+.card.express .dot,
+.card.asb .dot,
+.card.demir .dot,
+.card.unibank .dot,
+.card.kapital .dot,
+.card.access .dot{
+	background-color: #fff;
+}
+
+.card.vtb{
+	background-color: #06377B;
+}
+
+.card.access{
+	background-color: #00659f;
+}
+
+.card.demir{
+	background-color: #00ab41;
+}
+
+.card.kapital{
+	background-color: #b30838;
+}
+
+.card.unibank{
+	background-color: #F47123;
+}
+
+.card.asb{
+	background-color: #192964;
+}
+
+.card.express{
+	background-color: #F6A40A;
+}
+
+.card.ibar{
+	background-color: #2E56A6;
+}
+
+.card.xalq{
+	background-color: #E2001A;
+}
+
+.card.bankofbaku{
+	background-color: #04C3F4;
+}
+
+.card.pasha{
+	background-color: #008455;
+}
+
+.card.azerturk{
+	background-color: #734F8F;
+}
+/*===== SECTION CARDS end =====*/
+
+
+
+
+
+/*===== SECTION FUNCTIONS start =====*/
+.card{
+	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .6), 0px 8px 15px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .6), 0px 8px 15px 0px rgba(0,0,0,0.1);
+	box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .6), 0px 8px 15px 0px rgba(0,0,0,0.1);
+}

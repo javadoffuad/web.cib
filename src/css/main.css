@@ -123,6 +123,7 @@
 }
 /*----- success page start -----*/
 
+.card,
 .pane.payment-form,
 #latest-operations .item .amount,
 .template .template-header ._amount,
