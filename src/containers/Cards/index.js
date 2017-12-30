@@ -15,9 +15,14 @@ export default class Cards extends Component {
     };
 
     handleCard(card) {
+        let { activeCard } = this.state;
+        if(activeCard && card.id === activeCard.id){
+            return false;
+        }
+
         this.setState({
             activeCard: card
-        }, () => console.log("card active", this.state.activeCard));
+        }, () => console.log("active card", this.state.activeCard));
     }
 
     render() {
