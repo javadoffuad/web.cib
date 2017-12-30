@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from 'containers/App/App';
 import 'css/reset.css';
 import 'css/main.css';
+import 'css/card.css';
 
 ReactDOM.render(
     <BrowserRouter>

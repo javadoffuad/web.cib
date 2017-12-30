@@ -18,18 +18,37 @@
 }
 
 .card{
-	background-color: #fedd2c;
+	background-color: #fff;
 	padding: 18px 15px;
     position: relative;
 	margin: 0;
 	display: flex;
 	width: 100%;
+	cursor: pointer;
 
 	justify-content: space-between;
 
 	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .75), 0px 1px 1px 0px rgba(0,0,0,0.15);
 	-moz-box-shadow:  inset 0px 1px 2px 0px rgba(255,255,255, .75), 0px 1px 1px 0px rgba(0,0,0,0.15);
 	box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .75), 0px 1px 1px 0px rgba(0,0,0,0.15);
+}
+
+.card.card-new{
+	border: 1px solid #00a7eb57;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-new__icon{
+	width: 24px;
+	height: 24px;
+	margin-bottom: 8px;
+	background: url(../images/icons.png) no-repeat -32px 0;
+}
+
+.card-new__text{
+	font-size: 13px;
+	color: #00a7eb;
 }
 
 .all-cards .card .name{
@@ -71,9 +90,9 @@
 	content:"";
 	left:0;
 	right:0;
-	top:0;
-	bottom: 0;
-	border: 4px solid #de0519;
+	top:-1px;
+	bottom: -1px;
+	border: 4px solid #eaeaea;
 }
 
 .card .header{
@@ -255,8 +274,8 @@
 
 
 /*===== SECTION FUNCTIONS start =====*/
-.card{
+/*.card{
 	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .6), 0px 8px 15px 0px rgba(0,0,0,0.1);
 	-moz-box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .6), 0px 8px 15px 0px rgba(0,0,0,0.1);
 	box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .6), 0px 8px 15px 0px rgba(0,0,0,0.1);
-}
+}*/
