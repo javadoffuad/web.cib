@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Header from 'components/Header';
 import RightPaneContainer from 'components/RightPaneContainer';
@@ -7,9 +8,9 @@ import Card from 'components/Card';
 import CardControls from 'components/CardControls';
 import LatestOperationItem from 'components/LatestOperationItem';
 
-import { cardData, latestPaymentData } from 'helpers';
+import { latestPaymentData } from 'helpers';
 
-export default class Cards extends Component {
+class Cards extends Component {
     state = {
         activeCard: null
     };
@@ -26,6 +27,10 @@ export default class Cards extends Component {
     }
 
     render() {
+        const { cards:{list} } = this.props;
+
+        console.log("-----", this.props.cards)
+
         return (
             <div className="pane">
                 <div className="pane pane-main">
@@ -41,7 +46,7 @@ export default class Cards extends Component {
                     <div className="pane pane-body">
                         <div id="cards" className="pane pane-cards all-cards">
                             {
-                                cardData.map((card, index) =>
+                                list.map((card, index) =>
                                     <Card
                                         key={index}
                                         handleCard={(card) => this.handleCard(card)}
@@ -78,3 +83,11 @@ export default class Cards extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        ...state
+    };
+};
+
+export default connect(mapStateToProps)(Cards);
