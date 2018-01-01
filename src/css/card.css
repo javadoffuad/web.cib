@@ -273,9 +273,20 @@
 
 
 
-/*===== SECTION FUNCTIONS start =====*/
-/*.card{
-	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .6), 0px 8px 15px 0px rgba(0,0,0,0.1);
-	-moz-box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .6), 0px 8px 15px 0px rgba(0,0,0,0.1);
-	box-shadow: inset 0px 1px 2px 0px rgba(255,255,255, .6), 0px 8px 15px 0px rgba(0,0,0,0.1);
-}*/
+.example-enter {
+	opacity: 0.01;
+  }
+  
+.example-enter.example-enter-active {
+	opacity: 1;
+	transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+	opacity: 1;
+}
+
+.example-leave.example-leave-active {
+	opacity: 0.01;
+	transition: opacity 300ms ease-in;
+}

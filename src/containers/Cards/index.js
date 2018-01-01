@@ -8,36 +8,54 @@ import Card from 'components/Card';
 import CardControls from 'components/CardControls';
 import LatestOperationItem from 'components/LatestOperationItem';
 
+import { CSSTransitionGroup } from 'react-transition-group';
+
 import { latestPaymentData } from 'helpers';
 
 class Cards extends Component {
     state = {
-        activeCard: null
+        activeCard: null,
+        cardControls: false,
     };
 
     handleCard(card) {
         let { activeCard } = this.state;
+        let self = false;
+
         if(activeCard && card.id === activeCard.id){
-            return false;
+            self = true;
         }
 
         this.setState({
-            activeCard: card
+            activeCard: self ? null : card,
+            cardControls: self ? false : true,
         }, () => console.log("active card", this.state.activeCard));
     }
 
     render() {
         const { cards:{list} } = this.props;
 
-        console.log("-----", this.props.cards)
+        const options = {
+            transitionName: "example",
+            transitionEnterTimeout: 500,
+            transitionLeaveTimeout: 0
+        }
 
         return (
             <div className="pane">
                 <div className="pane pane-main">
                     <Header title="Cards">
                         <CardControls>
-                            <button id="card-edit" className="menu-item inactive" title="Редактировать карту"><i className="icon icon-edit"></i></button>
-                            <button id="card-delete" className="menu-item inactive" title="Удалить карту"><i className="icon icon-delete"></i></button>
+                            <CSSTransitionGroup {...options}>
+                            {
+                                this.state.cardControls
+                                ? <span>
+                                    <button id="card-edit" className="menu-item" title="Редактировать карту"><i className="icon icon-edit"></i></button>
+                                    <button id="card-delete" className="menu-item" title="Удалить карту"><i className="icon icon-delete"></i></button>
+                                </span>
+                                : ''
+                            }
+                            </CSSTransitionGroup>
                             <Link to="/cards/add" id="card-new" className="menu-item" title="Новая карта">
                                 <i className="icon icon-new"></i>
                             </Link>
