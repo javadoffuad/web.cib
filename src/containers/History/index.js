@@ -9,10 +9,10 @@ export default () => {
     return (
         <div className="pane">
             <div className="pane pane-main">
-                <Header title="History"/>
+                <Header title="История оплат"/>
                 <div className="pane pane-body">history page</div>
             </div>
-            <RightPaneContainer title="Filter">
+            <RightPaneContainer title="Фильтр">
                 <RightFixedPane>
                     <SearchPane />
                 </RightFixedPane>

@@ -44,7 +44,7 @@ class Cards extends Component {
         return (
             <div className="pane">
                 <div className="pane pane-main">
-                    <Header title="Cards">
+                    <Header title="Карты">
                         <CardControls>
                             <CSSTransitionGroup {...options}>
                             {
@@ -72,7 +72,7 @@ class Cards extends Component {
                                         card={card}/>
                                 )
                             }
-                            <Link to="cards/add" className="card-wrap">
+                            <Link to="/cards/add" className="card-wrap">
                                 <div className="card card-new" title="Новая карта">
                                     <div className="card-new__icon"></div>
                                     <span className="card-new__text">Новая карта</span>
@@ -81,10 +81,10 @@ class Cards extends Component {
                         </div>
                     </div>
                 </div>
-                <RightPaneContainer title="Operations">
+                <RightPaneContainer title="Операции">
                     <div className="pane pane-right-fixed">
                         <div className="latest-payment-header">
-                            <h2 className="title">Last payments</h2>
+                            <h2 className="title">Последние платежи</h2>
                         </div>
                     </div>
                     <div id="latest-operation-container" className="pane pane-item-container">

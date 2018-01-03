@@ -1024,7 +1024,7 @@
 }
 
 .pane-newcard .newcard-sprite{
-    margin-top: 20px;
+    margin-top: 30px;
     position: relative;
     width: 445px;
 }
@@ -1040,7 +1040,7 @@
 }
 
 .pane-newcard .newcard.card-front{
-    margin-left: 55px;
+    margin: 0;
     position: relative;
     padding: 30px;
     z-index: 2;
@@ -1050,7 +1050,7 @@
 .pane-newcard .newcard.card-back{
     position: absolute;
     top: 0;
-    left: 55px;
+    left: 110px;
 }
 
 .pane-newcard .newcard.card-front,

@@ -93,7 +93,10 @@ scrollbar[orient="vertical"] {
     color:silver;
 }
 
-
+@font-face{
+    font-family: Ocraext;
+    src: url(../fonts/OCRAEXT.TTF);
+}
 
 #non_free_num_ui .skype_c2c_logo_img{
     display: none !important;
