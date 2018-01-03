@@ -17,51 +17,43 @@ class NewCard extends Component {
 
         this.state = {
             card: {
-                type: null,
                 title: null,
                 color: '',
                 expiry: null,
-                number: null
+                number: '0965',
+                type: 'vs',
+                cvc: null
             }
         }
     }
 
     componentWillMount() {
-        this.changeColor(colors[0]);
+        this.handleProperty({name: "color", value: colors[0]});
     }
 
     handleCard() {
-        let card = {
-            id: 5,
-            bank: 'unibank',
-            type: 'vs',
-            title: 'Unibank salary',
-            number: '0965',
-            balance: 80,
-            currency: 'AZN',
-            currencyCode: '944',
-        };
-
-        this.props.dispatch(createCard(card));
+        this.props.dispatch(createCard(this.state.card));
     }
 
-    changeColor(color) {
+    handleChangeColor = (color, event) => {
+        this.handleProperty({name: "color", value: color.hex});
+    };
+
+    handleProperty(property) {
         let newState = this.state.card;
 
         newState = Object.assign({}, this.state.card, {
-            color
+            [property.name]: property.value
         })
         this.setState({
             card: newState
-        }, () => console.log("changes", color, this.state.card))
+        }, () => console.log("handle property", property.value, this.state.card))
     }
 
-    handleChange = (color, event) => {
-        console.log(color)
-        this.changeColor(color.hex);
-    };
-
     render() {
+
+        const { cards } = this.props;
+
         return (
             <div className="pane" style={{flex: 1}}>
                 <div className="pane pane-main">
@@ -77,7 +69,8 @@ class NewCard extends Component {
                                             <p>Можно добавить желаемое число карт. <a href="https://cib.az#bl1-f">Подробная информация</a></p>
                                         </div>
                                     </div>
-                                    <NewCardItem 
+                                    <NewCardItem
+                                        handleProperty={(property) => this.handleProperty(property)}
                                         {...this.state.card}/>
                                 </div>
                                 
@@ -88,13 +81,17 @@ class NewCard extends Component {
                                             <CirclePicker
                                                 color={this.state.card.color}
                                                 colors={colors}
-                                                onChange={ this.handleChange }/>
+                                                onChange={ this.handleChangeColor }/>
                                         </div>
                                     </div>
                                     <div className="pane buttons">
                                         <div className="fields field-button">
                                             <div className="field">
-                                                <button onClick={() => this.handleCard()} className="btn primary">Сохранить карту</button>
+                                                {
+                                                    cards.isFetching
+                                                    ? <button disabled className="btn primary">Сохраняется...</button>
+                                                    : <button onClick={() => this.handleCard()} className="btn primary">Сохранить карту</button>
+                                                }
                                             </div>
                                         </div>
                                     </div>
@@ -108,10 +105,8 @@ class NewCard extends Component {
     }
 }
 
-const mapStateToProps = state => {
+export default connect((state) => {
     return {
-        ...state
-    };
-};
-
-export default connect(mapStateToProps)(NewCard);
+        cards: state.cards
+    }
+})(NewCard);

@@ -143,7 +143,11 @@
 
 .card .pan span,
 .card .name{
-	color: #444;
+	color: #fff;
+}
+
+.card .dot{
+	background-color: #fff;
 }
 
 .card .name{
@@ -164,8 +168,8 @@
 	float: left;
 	width: 7px;
 	height: 7px;
-	display: inline-block;
-	background-color: #444;
+	display: inline-block;/*
+	background-color: #444;*/
 	position: relative;
 	margin-right: 4px;
 
@@ -176,96 +180,6 @@
 
 .card .number{
 	margin-left: 5px;
-}
-
-.card.vtb .pan span,
-.card.azerturk .pan span,
-.card.pasha .pan span,
-.card.bankofbaku .pan span,
-.card.xalq .pan span,
-.card.ibar .pan span,
-.card.express .pan span,
-.card.asb .pan span,
-.card.kapital .pan span,
-.card.unibank .pan span,
-.card.demir .pan span,
-.card.access .pan span,
-.card.vtb .name,
-.card.bankofbaku .name,
-.card.azerturk .name,
-.card.pasha .name,
-.card.xalq .name,
-.card.ibar .name,
-.card.express .name,
-.card.asb .name,
-.card.kapital .name,
-.card.unibank .name,
-.card.demir .name,
-.card.access .name{
-	color: #fff;
-}
-
-.card.vtb .dot,
-.card.azerturk .dot,
-.card.pasha .dot,
-.card.bankofbaku .dot,
-.card.xalq .dot,
-.card.ibar .dot,
-.card.express .dot,
-.card.asb .dot,
-.card.demir .dot,
-.card.unibank .dot,
-.card.kapital .dot,
-.card.access .dot{
-	background-color: #fff;
-}
-
-.card.vtb{
-	background-color: #06377B;
-}
-
-.card.access{
-	background-color: #00659f;
-}
-
-.card.demir{
-	background-color: #00ab41;
-}
-
-.card.kapital{
-	background-color: #b30838;
-}
-
-.card.unibank{
-	background-color: #F47123;
-}
-
-.card.asb{
-	background-color: #192964;
-}
-
-.card.express{
-	background-color: #F6A40A;
-}
-
-.card.ibar{
-	background-color: #2E56A6;
-}
-
-.card.xalq{
-	background-color: #E2001A;
-}
-
-.card.bankofbaku{
-	background-color: #04C3F4;
-}
-
-.card.pasha{
-	background-color: #008455;
-}
-
-.card.azerturk{
-	background-color: #734F8F;
 }
 /*===== SECTION CARDS end =====*/
 

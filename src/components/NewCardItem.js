@@ -2,9 +2,7 @@ import React from 'react';
 
 export default (props) => {
 
-    const { color } = props;
-
-    console.log("color new card item", color)
+    const { color, handleProperty } = props;
 
     return(
         <div className="pane newcard-sprite">
@@ -30,13 +28,25 @@ export default (props) => {
                 <div className="pane input-sprite right">
                     <div className="input-block expry-block">
                         <div className="tooltip" data-pos="top-left">Срок действия (10/12)</div>
-                        <input type="tel" placeholder="00/00" maxLength="5" id="expiry" data-next="cvv" data-prev="pan4" tabIndex="5" autoComplete="off" />
+                        <input
+                            onChange={(e) => handleProperty({name: "expiry", value: e.target.value})}
+                            type="tel"
+                            placeholder="00/00"
+                            maxLength="5"
+                            tabIndex="5"
+                            autoComplete="off" />
                     </div>
                 </div>
                 <div className="pane input-sprite">
                     <div className="input-block">
                         <div className="tooltip" data-pos="top-left">Имя карты</div>
-                        <input className="name" type="text" placeholder="Имя карты" id="cardname" data-prev="cvv" tabIndex="7" autoComplete="off" />
+                        <input  
+                            onChange={(e) => handleProperty({name: "title", value: e.target.value})}
+                            className="name"
+                            type="text"
+                            placeholder="Имя карты"
+                            tabIndex="7"
+                            autoComplete="off" />
                     </div>
                 </div>
             </div>
@@ -45,7 +55,13 @@ export default (props) => {
                 <div className="pane input-sprite right">
                     <div className="input-block cvv-block">
                         <div className="tooltip" data-pos="top-left">Card cvv</div>
-                        <input type="tel" placeholder="CVV" maxLength="3" id="cvv" data-next="cardname" data-prev="expiry" tabIndex="6" autoComplete="off" />
+                        <input
+                            onChange={(e) => handleProperty({name: "cvc", value: e.target.value})}
+                            type="tel"
+                            placeholder="CVV"
+                            maxLength="3"
+                            tabIndex="6"
+                            autoComplete="off" />
                     </div>
                 </div>
             </div>
