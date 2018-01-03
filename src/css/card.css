@@ -290,3 +290,8 @@
 	opacity: 0.01;
 	transition: opacity 300ms ease-in;
 }
+
+.picker {
+    position: relative;
+    margin: 15px auto 0 auto;
+}
