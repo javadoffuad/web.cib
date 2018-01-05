@@ -16,6 +16,7 @@ class NewCard extends Component {
         super(props);
 
         this.state = {
+            cardNumber: ['', '', '', ''],
             card: {
                 title: null,
                 color: '',
@@ -50,6 +51,15 @@ class NewCard extends Component {
         }, () => console.log("handle property", property.value, this.state.card))
     }
 
+    handleCardNumber(value, ID) {
+        let newState = Object.assign([], this.state.cardNumber);
+        newState.splice(ID, 1, value);
+
+        this.setState({
+            cardNumber: newState
+        }, () => console.log("handleCardNumber", this.state.cardNumber));
+    }
+
     render() {
 
         const { cards } = this.props;
@@ -66,10 +76,11 @@ class NewCard extends Component {
                                         <h2 className="pane title">Ввести карточную информацию</h2>
                                         <div className="pane desc-txt">
                                             <p>Количество карт неограниченно.</p>
-                                            <p>Можно добавить желаемое число карт. <a href="https://cib.az#bl1-f">Подробная информация</a></p>
+                                            <p>Можно добавить желаемое число карт. <a href="#">Подробная информация</a></p>
                                         </div>
                                     </div>
                                     <NewCardItem
+                                        handleCardNumber={(value, ID) => this.handleCardNumber(value, ID)}
                                         handleProperty={(property) => this.handleProperty(property)}
                                         {...this.state.card}/>
                                 </div>

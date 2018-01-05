@@ -37,6 +37,7 @@
     "react-color": "^2.13.8",
     "react-dev-utils": "^4.2.1",
     "react-dom": "^16.2.0",
+    "react-maskedinput": "^4.0.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^1.2.1",

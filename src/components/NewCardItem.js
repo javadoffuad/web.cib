@@ -1,8 +1,9 @@
 import React from 'react';
+import MaskedInput from 'react-maskedinput';
 
 export default (props) => {
 
-    const { color, handleProperty } = props;
+    const { color, handleProperty, handleCardNumber } = props;
 
     return(
         <div className="pane newcard-sprite">
@@ -10,31 +11,59 @@ export default (props) => {
                 <div className="pane input-sprite multiple">
                     <div className="input-block">
                         <div className="tooltip" data-pos="top-left">Номер карты (только цифры)</div>
-                        <input type="tel" placeholder="0000" maxLength="4" id="pan1" data-next="pan2" tabIndex="1" autoComplete="off" />
+                        <MaskedInput
+                            onChange={(e) => handleCardNumber(e.target.value, 0)}
+                            mask="1111"
+                            name="pan1"
+                            placeholder="0000"/>
                     </div>
                     <div className="input-block">
                         <div className="tooltip" data-pos="top-left">Номер карты (только цифры)</div>
-                        <input type="tel" placeholder="0000" maxLength="4" id="pan2" data-next="pan3" data-prev="pan1" tabIndex="2" autoComplete="off" />
+                        <MaskedInput
+                            onChange={(e) => handleCardNumber(e.target.value, 1)}
+                            mask="1111"
+                            name="pan2"
+                            placeholder="0000"/>
                     </div>
                     <div className="input-block">
                         <div className="tooltip" data-pos="top-left">Номер карты (только цифры)</div>
-                        <input type="tel" placeholder="0000" maxLength="4" id="pan3" data-next="pan4" data-prev="pan2" tabIndex="3" autoComplete="off" />
+                        <MaskedInput
+                            onChange={(e) => handleCardNumber(e.target.value, 2)}
+                            mask="1111"
+                            name="pan3"
+                            placeholder="0000"/>
                     </div>
                     <div className="input-block">
                         <div className="tooltip" data-pos="top-left">Номер карты (только цифры)</div>
-                        <input type="tel" placeholder="0000" maxLength="4" id="pan4" data-next="expiry" data-prev="pan3" tabIndex="4" autoComplete="off" />
+                        <MaskedInput
+                            onChange={(e) => handleCardNumber(e.target.value, 3)}
+                            mask="1111"
+                            name="pan4"
+                            placeholder="0000"/>
+                        {/*<input
+                            onChange={(e) => handleCardNumber(e.target.value, 3)}
+                            type="tel"
+                            placeholder="0000"
+                            maxLength="4"
+                            tabIndex="4"
+                            autoComplete="off" />*/}
                     </div>
                 </div>
                 <div className="pane input-sprite right">
                     <div className="input-block expry-block">
                         <div className="tooltip" data-pos="top-left">Срок действия (10/12)</div>
-                        <input
+                        <MaskedInput
+                            onChange={(e) => handleProperty({name: "expiry", value: e.target.value})}
+                            mask="11/11"
+                            name="cvc"
+                            placeholder="00/00"/>
+                        {/*<input
                             onChange={(e) => handleProperty({name: "expiry", value: e.target.value})}
                             type="tel"
                             placeholder="00/00"
                             maxLength="5"
                             tabIndex="5"
-                            autoComplete="off" />
+                            autoComplete="off" />*/}
                     </div>
                 </div>
                 <div className="pane input-sprite">
@@ -55,13 +84,12 @@ export default (props) => {
                 <div className="pane input-sprite right">
                     <div className="input-block cvv-block">
                         <div className="tooltip" data-pos="top-left">Card cvv</div>
-                        <input
+                        <MaskedInput
                             onChange={(e) => handleProperty({name: "cvc", value: e.target.value})}
-                            type="tel"
-                            placeholder="CVV"
-                            maxLength="3"
-                            tabIndex="6"
-                            autoComplete="off" />
+                            mask="111"
+                            name="cvc"
+                            placeholder="000"
+                            tabIndex="6"/>
                     </div>
                 </div>
             </div>

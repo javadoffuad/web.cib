@@ -33,5 +33,10 @@ export default {
                 currencyCode: '944',
             }
         ]
+    },
+
+    payments: {
+        isFetching: false,
+        list: []
     }
 }
